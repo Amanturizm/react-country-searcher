@@ -1,0 +1,10 @@
+.countries-item {
+  text-decoration: none;
+  color: #ccc;
+  padding-left: 10px;
+}
+
+.countries-item:hover {
+  background-color: #000;
+  transition: background-color .2s linear;
+}
