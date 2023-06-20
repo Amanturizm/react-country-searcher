@@ -2,6 +2,7 @@
   text-decoration: none;
   color: #ccc;
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .countries-item:hover {

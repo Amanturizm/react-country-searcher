@@ -3,12 +3,11 @@ import './CountriesItem.css';
 
 interface Props {
   country: ICountry;
-  onClick: React.MouseEventHandler;
 }
 
-const CountriesItem: React.FC<Props> = ({ country, onClick }) => {
+const CountriesItem: React.FC<Props> = ({ country }) => {
   return (
-    <div className="countries-item" onClick={onClick}>{ country.name }</div>
+    <div className="countries-item">{ country.name }</div>
   );
 };
 

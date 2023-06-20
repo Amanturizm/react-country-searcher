@@ -1,0 +1,7 @@
+.countries {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
