@@ -1,5 +1,8 @@
 .country-searcher {
-  margin: 5% auto;
+  margin: 5%;
+  display: flex;
+  justify-content: start;
+  gap: 50px;
 }
 
 .country-searcher ::-webkit-scrollbar {

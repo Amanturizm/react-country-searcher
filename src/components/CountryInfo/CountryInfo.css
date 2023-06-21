@@ -1,0 +1,29 @@
+.country-info-wrap * {
+  color: #ccc;
+}
+
+.country-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.country-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.country-info label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.country-info #border-list {
+  padding-left: 40px;
+  font-size: 1.1rem;
+}
+
+.country-info img {
+  max-width: 400px;
+}
