@@ -1,11 +1,13 @@
 import React from 'react';
 import './CountryInfo.css';
+import '../../Preloader.css';
 
 interface Props {
   countryInfo: ICountryInfo | null;
+  isPreloader: boolean;
 }
 
-const CountryInfo: React.FC<Props> = ({ countryInfo }) => {
+const CountryInfo: React.FC<Props> = ({ countryInfo, isPreloader }) => {
   const beforeSelectedCountryMessage: React.ReactNode = (
     <div>
       <h1>Выберите страну!</h1>
@@ -34,7 +36,12 @@ const CountryInfo: React.FC<Props> = ({ countryInfo }) => {
 
   return (
     <div className="country-info-wrap">
-      {countryInfoNode}
+      {
+        isPreloader ?
+          <div id="preloader">
+            <div id="loader"></div>
+          </div> : countryInfoNode
+      }
     </div>
   );
 };

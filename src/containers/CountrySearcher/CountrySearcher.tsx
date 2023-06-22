@@ -11,6 +11,7 @@ const COUNTRY_INFO_URL: string = 'alpha/';
 const CountrySearcher = () => {
   const [countries, setCountries] = useState<ICountry[]>([]);
   const [countrySelectedInfo, setCountrySelectedInfo] = useState<ICountryInfo | null>(null);
+  const [isPreloader, setIsPreloader] = useState<boolean>(false);
 
   const setAllCountries = useCallback(async () => {
     try {
@@ -31,6 +32,7 @@ const CountrySearcher = () => {
   }, [setAllCountries]);
 
   const setCountryInfo = async (alpha3Code: string) => {
+    setIsPreloader(true);
     try {
       const { data } = await axios.get<ICountryInfo>(BASE_URL + COUNTRY_INFO_URL + alpha3Code);
 
@@ -45,18 +47,20 @@ const CountrySearcher = () => {
           capital: data.capital,
           population: data.population,
           flag: data.flag,
-          borders: borders,
+          borders,
         }
       );
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsPreloader(false);
     }
   };
 
   return (
     <div className="country-searcher">
       <Countries countries={countries} countryFetch={setCountryInfo} />
-      <CountryInfo countryInfo={countrySelectedInfo} />
+      <CountryInfo countryInfo={countrySelectedInfo} isPreloader={isPreloader} />
     </div>
   );
 };

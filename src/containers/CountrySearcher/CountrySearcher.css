@@ -1,7 +1,7 @@
 .country-searcher {
   margin: 5%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 50px;
 }
 
